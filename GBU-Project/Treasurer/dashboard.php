@@ -216,7 +216,7 @@
                                   Dashboard
                             </button>
                             <div class="dropdown-menu min-width-200" aria-labelledby="page-header-user-dropdown">
-                                <a class="dropdown-item" href="Treasurer-profile.php?id=<=php >">
+                                <a class="dropdown-item" href="Treasurer-profile.php">
                                     <i class="si si-user mr-5"></i> Profile
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
@@ -302,17 +302,16 @@
                         <div class="col-md-6 col-xl-3">
                             <a class="block block-transparent" href="javascript:void(0)">
                                 <div class="block-content block-content-full bg-primary-lighter">
-                                    <!--     <?php 
-                                    include_once('../config/PDOClass.php');
-                                       
-                                      $sql = "SELECT SUM(amount) FROM `expenses`";
+                                        <?php 
+                                        include_once('../config/PDO.php');
+                                      $sql = "SELECT sum(*) from expense";
                                       $query = $db->prepare($sql);
                                       $query->execute();
-                                      $result=$query->fetchAll(PDO::FETCH_OBJ);
-                                       
-                                       ?> -->
+                                      $results=$query->fetchAll(PDO::FETCH_OBJ);
+                                      $cnt=$query->rowCount();
+                                                ?>
                                     <div class="py-50 text-center bg-white-op-25">
-                                        <div class="font-size-h2 font-w700 mb-0 text-primary">257,800 Rfw</div>
+                                        <div class="font-size-h2 font-w700 mb-0 text-primary"><?php echo htmlentities($cnt);?></div>
                                         <div class="font-size-sm font-w600 text-uppercase text-primary-dark">Total Expenses</div>
                                     </div>
                                 </div>
@@ -321,22 +320,18 @@
                         <div class="col-md-6 col-xl-3">
                             <a class="block block-transparent" href="javascript:void(0)">
                                 <div class="block-content block-content-full bg-success-light">
-                                   <!--  <?php 
-                                    include_once('../config/PDOClass.php');
-                                       $cnt = 0;
-                                      $sql = "SELECT  tithe FROM income";
+                                    <?php 
+                                       
+                                      $sql = "SELECT sum(tithe) as tith  from income";
                                       $query = $db->prepare($sql);
                                       $query->execute();
                                       $results=$query->fetchAll(PDO::FETCH_OBJ);
                                       $cnt=$query->rowCount();
-                                      foreach ($results as $result ) {
-                                         
-                                                  $cnt++; }?> -->
+                                                ?>
                                     <div class="py-50 text-center bg-white-op-25">
-                                        <div class="font-size-h2 font-w700 mb-0 text-success">345,000 Rfw</div>
+                                        <div class="font-size-h2 font-w700 mb-0 text-success"><?php echo htmlentities($cnt);?></div>
                                         <div class="font-size-sm font-w600 text-uppercase text-pulse-dark">Total Income</div>
                                     </div>
-                                
                                 </div>
                             </a>
                         </div>
@@ -344,7 +339,7 @@
                             <a class="block block-transparent" href="Account-update.php">
                                 <div class="block-content block-content-full bg-info-light">
                                     <div class="py-50 text-center bg-white-op-25">
-                                        <div class="font-size-h2 font-w700 mb-0 text-info">330,000 Rfw</div>
+                                        <div class="font-size-h2 font-w700 mb-0 text-info"><?php echo htmlentities($cnt);?></div>
                                         <div class="font-size-sm font-w600 text-uppercase">Account Status</div>
                                     </div>
                                 </div>
@@ -354,7 +349,7 @@
                             <a class="block block-transparent" href="javascript:void(0)">
                                 <div class="block-content block-content-full bg-warning-light">
                                     <div class="py-50 text-center bg-white-op-25">
-                                        <div class="font-size-h2 font-w700 mb-0 text-warning">30,000 Rfw</div>
+                                        <div class="font-size-h2 font-w700 mb-0 text-warning"><?php echo htmlentities($cnt);?></div>
                                         <div class="font-size-sm font-w600 text-uppercase">Debts</div>
                                     </div>
                                 </div>

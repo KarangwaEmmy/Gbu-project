@@ -106,15 +106,24 @@
                             </li>
                   
                             <li>
-                              <button type="button"    ><a href="Add-expenses.php" style="text-decoration: none;color: #000;">Add Expense</a></button>
+                              <button type="button"    ><a href="Add-income.php" style="text-decoration: none;color: #000;">Add Expense</a></button>
                             </li>
                             
                         </ul>
                         <!-- END Header Navigation -->
                     </div>
- 
+                    <!-- END Middle Section -->
+
+                    <!-- Right Section -->
+                    
+                    <!-- END Right Section -->
                 </div>
- 
+                <!-- END Header Content -->
+
+                
+
+                <!-- Header Loader -->
+                <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
                 <div id="page-header-loader" class="overlay-header bg-primary">
                     <div class="content-header content-header-fullrow text-center">
                         <div class="content-header-item">
@@ -211,9 +220,18 @@
             </main>
  
         </div>
+        <!-- END Page Container -->
+     
     
         <script src="../assets/js/codebase.core.min.js"></script>
-         <script src="../assets/js/codebase.app.min.js"></script>
+
+        <!--
+            Codebase JS
+
+            Custom functionality including Blocks/Layout API as well as other vital and optional helpers
+            webpack is putting everything together at ../assets/_es6/main/app.js
+        -->
+        <script src="../assets/js/codebase.app.min.js"></script>
 
         <!-- Page JS Plugins -->
         <script src="../assets/js/plugins/datatables/jquery.dataTables.min.js"></script>

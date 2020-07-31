@@ -144,7 +144,7 @@ session_start();
                     <div class="content-side content-side-full">
                         <ul class="nav-main">
                          <li>
-                                <a class="active" href="#"><i class="si si-cup"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+                                <a class="active" href="db_pop.php"><i class="si si-cup"></i><span class="sidebar-mini-hide">Dashboard</span></a>
                             </li>
                             <li class="nav-main-heading"><span class="sidebar-mini-visible">MG</span><span class="sidebar-mini-hidden">Manage Members</span></li>
                             <li>
@@ -169,7 +169,7 @@ session_start();
                                 <a href="GBU-activities.php"><i class="si si-briefcase"></i><span class="sidebar-mini-hide">Activities</span></a>
                             </li>
                             <li>
-                                <a href="Profile.php"><i class="si si-user"></i><span class="sidebar-mini-hide">My Profile</span></a>
+                                <a href=""><i class="si si-user"></i><span class="sidebar-mini-hide">My Profile</span></a>
                             </li>
                             </li>
 
@@ -310,14 +310,7 @@ session_start();
                     <div class="content">
                         <div class="row">
                             <div class="col-6 col-md-4 col-xl-2">
-                                <?php 
-                      $sql = "SELECT id from announcement ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?> 
-                                <a class="block block-rounded text-center" href="GBU-announcement.php">
+                                <a class="block block-rounded text-center" href="javascript:void(0)">
                                     <div class="block-content">
                                         <p class="mt-5 mb-10">
                                             <i class="fa fa-envelope  text-gray fa-2x d-xl-none"></i>
@@ -325,21 +318,14 @@ session_start();
                                         </p>
                                         <div class="block-content block-content-full clearfix">
                                      
-                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="<?php echo htmlentities($cnt);?>">0</div>
-                                    <div class="font-size-sm font-w600 text-uppercase text-primary-dark">Announce ments</div>
+                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="4252">0</div>
+                                    <div class="font-size-sm font-w600 text-uppercase text-primary-dark">Announcements</div>
                                 </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-6 col-md-4 col-xl-2">
-                                <?php 
-                      $sql = "SELECT id from cell ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?> 
-                                <a class="block block-rounded text-center" href="Gbu-cells.php">
+                                <a class="block block-rounded text-center" href="javascript:void(0)">
                                     <div class="block-content">
                                         <p class="mt-5 mb-10">
                                             <i class="fa fa-pencil text-gray fa-2x d-xl-none"></i>
@@ -347,21 +333,14 @@ session_start();
                                         </p>
                                         <div class="block-content block-content-full clearfix">
                                      
-                                    <div class="font-size-h3 font-w600 text-primary-darker"><span data-toggle="countTo" data-speed="1000" data-to="<?php echo htmlentities($cnt);?>">0</span></div>
+                                    <div class="font-size-h3 font-w600 text-primary-darker"><span data-toggle="countTo" data-speed="1000" data-to="780">0</span></div>
                                     <div class="font-size-sm font-w600 text-uppercase text-primary-dark">Cells</div>
                                 </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-6 col-md-4 col-xl-2">
-                                <?php 
-                      $sql = "SELECT id from department ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?> 
-                                <a class="block block-rounded text-center" href="GBU-departments.php">
+                                <a class="block block-rounded text-center" href="javascript:void(0)">
                                     <div class="block-content">
                                         <p class="mt-5 mb-10">
                                             <i class="fa fa-users text-gray fa-2x d-xl-none"></i>
@@ -369,28 +348,21 @@ session_start();
                                         </p>
                                          <div class="block-content block-content-full clearfix">
                                      
-                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="<?php echo htmlentities($cnt);?>">0</div>
+                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="15">0</div>
                                     <div class="font-size-sm font-w600 text-uppercase text-primary-dark">Departments</div>
                                 </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-6 col-md-4 col-xl-2">
-                                <?php 
-                      $sql = "SELECT * from amisdedbu ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?> 
-                                <a class="block block-rounded text-center" href="../GBU-amis.php">
+                                <a class="block block-rounded text-center" href="javascript:void(0)">
                                     <div class="block-content">
                                         <p class="mt-5 mb-10">
                                             <i class="fa fa-users text-gray fa-2x d-xl-none"></i>
                                             <i class="fa fa-users text-gray fa-3x d-none d-xl-inline-block"></i>
                                         </p>   <div class="block-content block-content-full clearfix">
                                      
-                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="<?php echo htmlentities($cnt);?>">0</div>
+                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="15">0</div>
                                     <div class="font-size-sm font-w600 text-uppercase text-primary-dark">Amis De Gbu</div>
                                 </div>
                                         
@@ -398,14 +370,7 @@ session_start();
                                 </a>
                             </div>
                             <div class="col-6 col-md-4 col-xl-2">
-                                <?php 
-                      $sql = "SELECT id from gbumember ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?> 
-                                <a class="block block-rounded text-center" href="GBU-members.php">
+                                <a class="block block-rounded text-center" href="javascript:void(0)">
                                     <div class="block-content">
                                         <p class="mt-5 mb-10">
                                             <i class="fa fa-users text-gray fa-2x d-xl-none"></i>
@@ -413,21 +378,14 @@ session_start();
                                         </p>
                                         <div class="block-content block-content-full clearfix">
                                     
-                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="<?php echo htmlentities($cnt);?>">0</div>
+                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="1500">0</div>
                                     <div class="font-size-sm font-w600 text-uppercase text-primary-dark">Members</div>
                                 </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-6 col-md-4 col-xl-2">
-                                <?php 
-                      $sql = "SELECT id from activities ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?> 
-                                <a class="block block-rounded text-center" href="GBU-activities.php">
+                                <a class="block block-rounded text-center" href="javascript:void(0)">
                                     <div class="block-content">
                                         <p class="mt-5 mb-10">
                                             <i class="fa fa-briefcase text-gray fa-2x d-xl-none"></i>
@@ -435,7 +393,7 @@ session_start();
                                         </p>
                                           <div class="block-content block-content-full clearfix">
                                     
-                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="150">0</div>
+                                    <div class="font-size-h3 font-w600 text-primary-darker" data-toggle="countTo" data-speed="1000" data-to="1500">0</div>
                                     <div class="font-size-sm font-w600 text-uppercase text-primary-dark">Actiivities</div>
                                 </div>
                                          
@@ -452,13 +410,6 @@ session_start();
                                 <div class="block-content block-content-full">
                                     <div class="py-20 text-center">
                                         <div class="mb-10">
-                                            <?php 
-                      $sql = "SELECT id from messages ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?>
                                             <i class="fa fa-user-circle-o fa-3x text-corporate"></i>
                                         </div>
                                         <div class="font-size-h4 font-w600">5 Messages</div>
@@ -472,16 +423,9 @@ session_start();
                                 <div class="block-content block-content-full">
                                     <div class="py-20 text-center">
                                         <div class="mb-10">
-                                            <?php 
-                      $sql = "SELECT id from gbumember ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?>
                                             <i class="fa fa-calendar fa-3x text-elegance"></i>
                                         </div>
-                                        <div class="font-size-h4 font-w600"><?php echo htmlentities($cnt);?> Members</div>
+                                        <div class="font-size-h4 font-w600">6 Members</div>
                                         <div class="text-muted">4 are scheduled for today!</div>
                                     </div>
                                 </div>
@@ -494,14 +438,7 @@ session_start();
                                         <div class="mb-10">
                                             <i class="fa fa-paypal fa-3x text-primary"></i>
                                         </div>
-                                                <?php 
-                      $sql = "SELECT id from payments ";
-                      $query = $db-> prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=$query->rowCount();
-                                ?>
-                                        <div class="font-size-h4 font-w600"><?php echo htmlentities($cnt);?> Payments</div>
+                                        <div class="font-size-h4 font-w600">2 Payments</div>
                                         <div class="text-muted">Pending for tomorrow.</div>
                                     </div>
                                 </div>
@@ -519,9 +456,33 @@ session_start();
           
             <!-- END Footer -->
         </div>
- 
+        <!-- END Page Container -->
+
+        <!--
+            Codebase JS Core
+
+            Vital libraries and plugins used in all pages. You can choose to not include this file if you would like
+            to handle those dependencies through webpack. Please check out ../assets/_es6/main/bootstrap.js for more info.
+
+            If you like, you could also include them separately directly from the ../assets/js/core folder in the following
+            order. That can come in handy if you would like to include a few of them (eg jQuery) from a CDN.
+
+            ../assets/js/core/jquery.min.js
+            ../assets/js/core/bootstrap.bundle.min.js
+            ../assets/js/core/simplebar.min.js
+            ../assets/js/core/jquery-scrollLock.min.js
+            ../assets/js/core/jquery.appear.min.js
+            ../assets/js/core/jquery.countTo.min.js
+            ../assets/js/core/js.cookie.min.js
+        -->
         <script src="../assets/js/codebase.core.min.js"></script>
- 
+
+        <!--
+            Codebase JS
+
+            Custom functionality including Blocks/Layout API as well as other vital and optional helpers
+            webpack is putting everything together at ../assets/_es6/main/app.js
+        -->
         <script src="../assets/js/codebase.app.min.js"></script>
 
         <!-- Page JS Plugins -->

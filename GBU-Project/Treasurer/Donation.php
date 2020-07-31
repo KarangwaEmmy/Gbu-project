@@ -13,15 +13,14 @@
         $amount = filter_var($_POST['amount'], FILTER_SANITIZE_STRING);
         $donor = filter_var($_POST['donor'], FILTER_SANITIZE_STRING);
         $comment = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
-        $academic = filter_var($_POST['academic'], FILTER_SANITIZE_STRING);
 
         // Query to insert into the database
 
         $submitter = "Treasure";
 
-        $sql = $db->prepare("INSERT INTO `donation` (`academic`,`date`, `donor`, `amount`, `comment`) VALUES ('$academic','$date', '$donor', '$amount', '$comment')");
+        $sql = $db->prepare("INSERT INTO `donation` (`date`, `donor`, `amount`, `comment`) VALUES ('$date', '$donor', '$amount', '$comment')");
 
-        $sql->execute(array('academic'=>$academic, ':date'=>$date, ':donor'=>$donor, ':amount'=>$amount,':comment'=>$comment));
+        $sql->execute(array(':date'=>$date, ':donor'=>$donor, ':amount'=>$amount,':comment'=>$comment));
         if ($sql) {
               echo "<script>alert( 'Donation was created  Successfully!')</script>";
         }else{
@@ -177,27 +176,6 @@
                                 <div class="col-xl-6">
                                    
                                     <form class="js-validation-bootstrap" action="" method="post">
-                                                                               <?php 
-                      include_once('../config/PDOClass.php');
-                      $sql = "SELECT * FROM `academic-year`";
-                      $query = $db->prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-
-                      if($query->rowCount() > 0)
-                        {
-                        foreach($results as $result)
-                        {               
-                    
-                                ?> 
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-username">Academic Year <span class="text-danger">*</span></label>
-                             
-                                            <div class="col-lg-8">
-                                                <input type="text" class="form-control" id="val-username" name="academic"  value="<?php echo htmlentities($result->year);?>" readonly>
-                                            </div>
-                                        </div>
-                                         <?php }}?>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="example-datepicker1">Date</label>
                                             <div class="col-lg-8">

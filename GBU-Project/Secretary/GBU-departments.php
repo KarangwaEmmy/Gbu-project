@@ -157,44 +157,52 @@ session_start();
                 <!-- END Header Loader -->
             </header>
             <!-- END Header -->
-   <main id="main-container">
+
+            <!-- Main Container -->
+            <main id="main-container">
 
             <div class="content">
                     <div class="my-50 text-center">
-                         
-                        <h3 class="h5 text-muted mb-0">All Departments</h3>
+                        <h2 class="font-w700 text-black mb-10">All GBU Departments</h2>
+                        <h3 class="h5 text-muted mb-0">All great, keep it up!</h3>
                     </div>
                     <div class="row">
-                        <?php 
-                      include_once('../config/PDO.php');
-                      $sql = "SELECT * from department";
-                      $query = $db->prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=1;
-
-                      foreach ($results as $result) {
-                    
-                                ?>
+                 
                         <div class="col-lg-6 col-xl-4">
                             <div class="block block-fx-shadow text-center">
-                                <a class="d-block bg-info font-w600 text-uppercase py-5" >
-                                    <span class="text-white"><?=$result->name?></span>
+                                <a class="d-block bg-info font-w600 text-uppercase py-5" href="javascript:void(0)" data-toggle="modal" data-target="#modal-crypto-wallet-eth">
+                                    <span class="text-white">Evangelism</span>
                                 </a>
                                 <div class="block-content block-content-full">
-                                    <div class="pt-15 pb-20">
-                                        <div class="font-size-h3 font-w400"><?=$result->leader?></div>
-                                        <br>
-                                        <div class="font-size-sm font-w600 text-uppercase text-muted"><?=$result->fellowshipday?></div>
+                                    <div class="pt-20 pb-30">
+                                        <div class="font-size-h3 font-w700">8 Members</div>
+                                        <div class="font-size-sm font-w600 text-uppercase text-muted">Cell leader name</div>
                                     </div>
-                                    <a class="btn btn-secondary" href="Department-members.php?dept_id=<?=$result->id?>">
+                                    <a class="btn btn-secondary" href="javascript:void(0)">
                                         <i class="fa fa-send mr-5"></i> View More
                                     </a>
                                      
                                 </div>
                             </div>
                         </div>
-                     <?php $cnt++; }?>
+                      
+                        <div class="col-lg-6 col-xl-4">
+                            <div class="block block-fx-shadow text-center">
+                                <a class="d-block bg-elegance font-w600 text-uppercase py-5" href="javascript:void(0)" data-toggle="modal" data-target="#modal-crypto-wallet-gbp">
+                                    <span class="text-white">Rhema Ministries</span>
+                                </a>
+                                <div class="block-content block-content-full">
+                                    <div class="pt-20 pb-30">
+                                        <div class="font-size-h3 font-w700">37 members</div>
+                                        <div class="font-size-sm font-w600 text-uppercase text-muted">Cell leader name</div>
+                                    </div>
+                                   <a class="btn btn-secondary" href="javascript:void(0)">
+                                        <i class="fa fa-send mr-5"></i> View More
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                 </div>
@@ -202,7 +210,122 @@ session_start();
             <!-- END Main Container -->
  
         </div>
-   
+        <!-- END Page Container -->
+
+        <!-- BTC Wallet -->
+ 
+        <!-- END BTC Wallet -->
+
+        <!-- ETH Wallet -->
+        <div class="modal fade" id="modal-crypto-wallet-eth" tabindex="-1" role="dialog" aria-labelledby="modal-crypto-wallet-eth" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="block block-themed block-transparent mb-0">
+                        <div class="block-header bg-primary-dark">
+                            <h3 class="block-title">
+                                <i class="si si-wallet text-info mr-5"></i> Dominion Cell
+                            </h3>
+                            <div class="block-options">
+                                <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                    <i class="si si-close"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <table class="table table-borderless table-striped table-vcenter mb-10">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">
+                                            JAN<br>10
+                                        </td>
+                                        <td>
+                                            <strong>Bought Ethereum</strong><br>
+                                            <span class="text-muted">Using USD wallet</span>
+                                        </td>
+                                        <td class="text-right text-success font-w600">
+                                            + 2.50 ETH
+                                        </td>
+                                        <td class="d-none d-sm-table-cell text-right text-danger font-w600">
+                                            - $2.405
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            JAN<br>05
+                                        </td>
+                                        <td>
+                                            <strong>Bought Ethereum</strong><br>
+                                            <span class="text-muted">Using USD wallet</span>
+                                        </td>
+                                        <td class="text-right text-success font-w600">
+                                            + 0.50 ETH
+                                        </td>
+                                        <td class="d-none d-sm-table-cell text-right text-danger font-w600">
+                                            - $530
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            JAN<br>02
+                                        </td>
+                                        <td>
+                                            <strong>Sold Ethereum</strong><br>
+                                            <span class="text-muted">Using USD wallet</span>
+                                        </td>
+                                        <td class="text-right text-danger font-w600">
+                                            - 0.25 ETH
+                                        </td>
+                                        <td class="d-none d-sm-table-cell text-right text-success font-w600">
+                                            + $260
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            JAN<br>01
+                                        </td>
+                                        <td>
+                                            <strong>Sold Ethereum</strong><br>
+                                            <span class="text-muted">Using USD wallet</span>
+                                        </td>
+                                        <td class="text-right text-danger font-w600">
+                                            - 2.00 ETH
+                                        </td>
+                                        <td class="d-none d-sm-table-cell text-right text-success font-w600">
+                                            + $2.120
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            JAN<br>01
+                                        </td>
+                                        <td>
+                                            <strong>Bought Ethereum</strong><br>
+                                            <span class="text-muted">Using USD wallet</span>
+                                        </td>
+                                        <td class="text-right text-success font-w600">
+                                            + 1.00 ETH
+                                        </td>
+                                        <td class="d-none d-sm-table-cell text-right text-danger font-w600">
+                                            - $1.000
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-alt-secondary" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-alt-primary" type="button" data-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END ETH Wallet -->
+
+       
+ 
+
+ 
         <script src="../assets/js/codebase.core.min.js"></script>
 
         <!--

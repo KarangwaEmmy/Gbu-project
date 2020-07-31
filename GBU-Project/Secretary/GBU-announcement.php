@@ -174,53 +174,49 @@ session_start();
                                          
                                             <th class="d-none d-lg-table-cell text-center" style="width: 15%;">Person Incharge</th>
                                             <th class="text-center" style="width: 20%;">Submission Date</th>
-                                            <th class="text-center" style="width: 80px;">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                       include_once('../config/PDOClass.php');
-                       
-                      $sql = "SELECT * from announcement ";
-                      $query = $db->prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=1;
-
-                      foreach ($results as $result) {
-                           // if ($results->rowCount()>0) {
-                                
-                          
-                    
-                                ?>
                                         <tr>
                                             <td>
                                                 <h4 class="h5 mt-15 mb-5">
-                                                    <a href="javascript:void(0)"><?=$result->title?></a>
+                                                    <a href="javascript:void(0)">Web Application Framework</a>
                                                 </h4>
                                                 <p class="d-none d-sm-block text-muted">
-                                                    <?=$result->details?>
+                                                    Your web applications have never been so easy to create and publish.
                                                 </p>
                                             </td>
                                             
-                                            <td class="d-none d-lg-table-cell font-size-xl text-center font-w600"><?=$result->person?></td>
-                                            <td class="font-size-xl text-center font-w600"><?=$result->submitdate?></td>
-                                             <td class="text-center">
-                                                <div class="btn-group">
-                                                    <button  type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
-                                                        <a href="announcement-update.php?member=<?=$result->id?>"><i class="fa fa-edit" title="Edit Record"></i> </a>
-                                                    </button>
-                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
-                                                        <a href="Delete-ann.php?member=<?=$result->id?>"><i class="fa fa-times" title="Edit Record"></i> </a>
-                                                    </button>
-                                                </div>
-                                            </td>
+                                            <td class="d-none d-lg-table-cell font-size-xl text-center font-w600">1795</td>
+                                            <td class="font-size-xl text-center font-w600">$ 21,987</td>
                                         </tr>
-                                         <?php $cnt++;  
-                          // }
-
-                          }?>
-                                    
+                                        
+                                        <tr>
+                                            <td>
+                                                <h4 class="h5 mt-15 mb-5">
+                                                    <a href="javascript:void(0)">Flaticon Set</a>
+                                                </h4>
+                                                <p class="d-none d-sm-block text-muted">
+                                                    A beatifully and and crafted icon set including more than 3000 icons.
+                                                </p>
+                                            </td>
+                                             
+                                            <td class="d-none d-lg-table-cell font-size-xl text-center font-w600">2500</td>
+                                            <td class="font-size-xl text-center font-w600">$ 18,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h4 class="h5 mt-15 mb-5">
+                                                    <a href="javascript:void(0)">iOS UI Kit</a>
+                                                </h4>
+                                                <p class="d-none d-sm-block text-muted">
+                                                    Create your app wireframes easily with this new UI Kit featuring iOS based designs.
+                                                </p>
+                                            </td>
+                                           
+                                            <td class="d-none d-lg-table-cell font-size-xl text-center font-w600">2690</td>
+                                            <td class="font-size-xl text-center font-w600">$ 10,002</td>
+                                        </tr>
                                        
                                     </tbody>
                                 </table>
@@ -228,7 +224,70 @@ session_start();
 
             </main>
             <!-- END Main Container -->
-         
+                   <!-- Compose Modal -->
+        <div class="modal fade" id="modal-compose" tabindex="-1" role="dialog" aria-labelledby="modal-compose" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-top" role="document">
+                <div class="modal-content">
+                    <div class="block block-themed block-transparent mb-0">
+                        <div class="block-header">
+                            <h3 class="block-title">
+                                <i class="fa fa-pencil mr-5"></i> New Announcement
+                            </h3>
+                            <div class="block-options">
+                                <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                    <i class="si si-close"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <form class="my-10" action="be_pages_generic_inbox.php" method="post" onsubmit="return false;">
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <div class="form-material form-material-primary input-group">
+                                            <input type="email" class="form-control" id="message-email" name="message-email" placeholder="Write a title?">
+                                            <label for="message-email">Title</label>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="si si-envelope-open"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <div class="form-material form-material-primary input-group">
+                                            <input type="text" class="form-control" id="message-subject" name="message-subject" placeholder="What is this Person?">
+                                            <label for="message-subject">In Charge paerson</label>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="si si-book-open"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <div class="form-material form-material-primary">
+                                            <textarea class="form-control" id="message-msg" name="message-msg" rows="6" placeholder="Write your message.."></textarea>
+                                            <label for="message-msg">Anouncememt details</label>
+                                        </div>
+                                        <div class="form-text font-size-sm text-muted">Feel free to use common tags: &lt;blockquote&gt;, &lt;strong&gt;, &lt;em&gt;</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-alt-primary" data-dismiss="modal">
+                                        <i class="fa fa-send mr-5"></i> Send Message
+                                    </button>
+                                    <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <!-- END Page Container -->
 

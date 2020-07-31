@@ -111,9 +111,41 @@ session_start();
                         </ul>
                         <!-- END Header Navigation -->
                     </div>
-            
+                    <!-- END Middle Section -->
+
+                    <!-- Right Section -->
+                    
+                    <!-- END Right Section -->
                 </div>
- 
+                <!-- END Header Content -->
+
+                <!-- Header Search -->
+                <div id="page-header-search" class="overlay-header">
+                    <div class="content-header content-header-fullrow">
+                        <form action="bd_search.php" method="post">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <!-- Close Search Section -->
+                                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                                    <button type="button" class="btn btn-secondary px-15" data-toggle="layout" data-action="header_search_off">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                    <!-- END Close Search Section -->
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-secondary px-15">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Header Search -->
+
+                <!-- Header Loader -->
+                <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
                 <div id="page-header-loader" class="overlay-header bg-primary">
                     <div class="content-header content-header-fullrow text-center">
                         <div class="content-header-item">
@@ -149,39 +181,206 @@ session_start();
                                         <th class="text-center"></th>
                                         <th>Name</th>
                                         <th class="d-none d-sm-table-cell">Email</th>
-                                        <th class="d-none d-sm-table-cell">Registration</th>
-                                        <th class="d-none d-sm-table-cell" style="width: 15%;">Cell</th>
+                                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
                                         <th class="text-center" style="width: 15%;">Profile</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php 
-                      include_once('../config/PDO.php');
-                      $sql = "SELECT * from gbumember";
-                      $query = $db->prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=1;
-
-                      foreach ($results as $result) {
-                           
-                    
-                                ?>
                                     <tr>
-                                        <td class="text-center"><?=$cnt?></td>
-                                        <td class="font-w600"><?=$result->firstname?>  <?=$result->lastname?></td>
-                                        <td class="d-none d-sm-table-cell"><?=$result->email?></td>
-                                        <td class="d-none d-sm-table-cell"><?=$result->submitdate?></td>
+                                        <td class="text-center">1</td>
+                                        <td class="font-w600">Judy Ford</td>
+                                        <td class="d-none d-sm-table-cell">customer1@example.com</td>
                                         <td class="d-none d-sm-table-cell">
-                                            <span class="badge badge-success"><?=$result->cell?></span>
+                                            <span class="badge badge-info">Business</span>
                                         </td>
                                         <td class="text-center">
-                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
-                                                <a href="Profilepage.php?member=<?=$result->id?>"><i class="fa fa-user"></i></a>
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Amis de  GBU">
+                                                <i class="fa fa-user"></i>
                                             </button>
                                         </td>
                                     </tr>
-                                 <?php $cnt++; }?>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="font-w600">Lisa Jenkins</td>
+                                        <td class="d-none d-sm-table-cell">customer2@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-success">VIP</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <a href="Profilepage.php"><i class="fa fa-user"></i></a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td class="font-w600">Marie Duncan</td>
+                                        <td class="d-none d-sm-table-cell">customer3@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-warning">Trial</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+                                        <td class="font-w600">Melissa Rice</td>
+                                        <td class="d-none d-sm-table-cell">customer4@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-info">Business</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">5</td>
+                                        <td class="font-w600">Wayne Garcia</td>
+                                        <td class="d-none d-sm-table-cell">customer5@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-info">Business</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">6</td>
+                                        <td class="font-w600">Amanda Powell</td>
+                                        <td class="d-none d-sm-table-cell">customer6@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-warning">Trial</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">7</td>
+                                        <td class="font-w600">Carol Ray</td>
+                                        <td class="d-none d-sm-table-cell">customer7@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-warning">Trial</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">8</td>
+                                        <td class="font-w600">Justin Hunt</td>
+                                        <td class="d-none d-sm-table-cell">customer8@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-success">VIP</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">9</td>
+                                        <td class="font-w600">Jack Estrada</td>
+                                        <td class="d-none d-sm-table-cell">customer9@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-info">Business</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">10</td>
+                                        <td class="font-w600">Jose Wagner</td>
+                                        <td class="d-none d-sm-table-cell">customer10@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-warning">Trial</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">11</td>
+                                        <td class="font-w600">Adam McCoy</td>
+                                        <td class="d-none d-sm-table-cell">customer11@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-success">VIP</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">12</td>
+                                        <td class="font-w600">Jose Wagner</td>
+                                        <td class="d-none d-sm-table-cell">customer12@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-danger">Disabled</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">13</td>
+                                        <td class="font-w600">Jesse Fisher</td>
+                                        <td class="d-none d-sm-table-cell">customer13@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-info">Business</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">14</td>
+                                        <td class="font-w600">Barbara Scott</td>
+                                        <td class="d-none d-sm-table-cell">customer14@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-primary">Personal</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">15</td>
+                                        <td class="font-w600">David Fuller</td>
+                                        <td class="d-none d-sm-table-cell">customer15@example.com</td>
+                                        <td class="d-none d-sm-table-cell">
+                                            <span class="badge badge-danger">Disabled</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="View Customer">
+                                                <i class="fa fa-user"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

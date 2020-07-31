@@ -1,4 +1,4 @@
-\\<?php
+<?php
     session_start();
  // error_reporting(0);
     include_once('../config/PDOClass.php');
@@ -6,6 +6,8 @@
         header("Location: dashboard.php");
     }
     else{
+
+ 
 ?>
 <!doctype html>
 <html lang="en" class="no-focus">
@@ -57,7 +59,8 @@
                     <!-- Side Header -->
                     <div class="content-header content-header-fullrow bg-black-op-10">
                         <div class="content-header-section text-center align-parent">
- 
+                            <!-- Close Sidebar, Visible only on mobile screens -->
+                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                             <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none align-v-r" data-toggle="layout" data-action="sidebar_close">
                                 <i class="fa fa-times text-danger"></i>
                             </button>
@@ -73,7 +76,9 @@
                             <!-- END Logo -->
                         </div>
                     </div>
+                    <!-- END Side Header -->
  
+                <!-- Sidebar Content -->
             </nav>
             <!-- END Sidebar -->
 
@@ -109,11 +114,41 @@
                         </ul>
                         <!-- END Header Navigation -->
                     </div>
- 
+                    <!-- END Middle Section -->
+
+                    <!-- Right Section -->
+                    
+                    <!-- END Right Section -->
                 </div>
                 <!-- END Header Content -->
- 
- 
+
+                <!-- Header Search -->
+                <div id="page-header-search" class="overlay-header">
+                    <div class="content-header content-header-fullrow">
+                        <form action="bd_search.php" method="post">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <!-- Close Search Section -->
+                                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                                    <button type="button" class="btn btn-secondary px-15" data-toggle="layout" data-action="header_search_off">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                    <!-- END Close Search Section -->
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-secondary px-15">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Header Search -->
+
+                <!-- Header Loader -->
+                <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
                 <div id="page-header-loader" class="overlay-header bg-primary">
                     <div class="content-header content-header-fullrow text-center">
                         <div class="content-header-item">
@@ -139,7 +174,8 @@
                         <div class="block-content">
                             <div class="row justify-content-center py-20">
                                 <div class="col-xl-6">
-                            
+                                    <!-- jQuery Validation functionality is initialized in js/pages/be_forms_validation.min.js which was auto compiled from _es6/pages/be_forms_validation.js -->
+                                    <!-- For more info and examples you can check out https://github.com/jzaefferer/jquery-validation -->
                                     <form class="js-validation-bootstrap" action=" " method="post">
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="example-datepicker1">Date</label>

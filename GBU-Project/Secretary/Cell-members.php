@@ -1,15 +1,14 @@
 <?php
-    session_start();
- // error_reporting(0);
+session_start();
     include_once('../config/PDOClass.php');
-    if (strlen($_SESSION['AdminLogin'])==0) {
-        header("Location: index.php");
+    if (strlen($_SESSION['SecLogin'])==0) {
+        header("Location: dashboard.php");
     }
     else{
 
- 
-?>
-<!DOCTYPE html>
+
+  ?>
+<!doctype html>
 <html lang="en" class="no-focus">
     <head>
         <meta charset="utf-8">
@@ -67,8 +66,8 @@
 
                             <!-- Logo -->
                             <div class="content-header-item">
-                                <a class="link-effect font-w700" href=" ">
-                                    <i class="si si-users text-primary"></i>
+                                <a class="link-effect font-w700" href="#">
+                                    <i class="si si-fire text-primary"></i>
                                     <span class="font-size-xl text-dual-primary-dark">GBU</span><span class="font-size-xl text-primary">Nyarugenge Campus</span>
                                 </a>
                             </div>
@@ -89,8 +88,8 @@
                     <div class="content-header-section">
                         <!-- Logo -->
                         <div class="content-header-item">
-                            <a class="link-effect font-w700 mr-5" href=" ">
-                                <i class="si si-users text-primary"></i>
+                            <a class="link-effect font-w700 mr-5" href="#">
+                                <i class="si si-fire text-primary"></i>
                                 <span class="font-size-xl text-dual-primary-dark">GBU</span><span class="font-size-xl text-primary">Nyarugenge Campus</span>
                             </a>
                         </div>
@@ -103,11 +102,11 @@
                 
                         <ul class="nav-main-header">
                             <li>
-                                <a class="active" href="javascript:void(0)"><i class="si"></i>Gbu Membership Form</a>
+                                <a class="active" href="#"><i class="si"></i>Gbu Membership Form</a>
                             </li>
                   
                             <li>
-                                <a href="dashboard.php"><i class="si si-home"></i>Home</a>
+                                 <a href="dashboard.php"><i class="si si-home"></i>Home</a>
                             </li>
                             
                         </ul>
@@ -164,60 +163,100 @@
                 <hr>
 
             <div class="col-md-9 offset-lg-2">
-                <h2 class="content-heading">Cell Member | Cell Member |Cell Member </h2> 
+                <h2 class="content-heading">Cell Member</h2>
                 <table class="table table-striped table-borderless table-hover table-vcenter">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th class="d-none d-sm-table-cell text-center" style="width: 40px;">No</th>
+                                            <th class="d-none d-sm-table-cell text-center" style="width: 40px;">#</th>
                                             <th class="text-center" style="width: 70px;"><i class="si si-user"></i></th>
                                             <th>Name</th>
                                             <th class="d-none d-sm-table-cell">Email</th>
-                                            <th class="d-none d-sm-table-cell">Graduation</th>
-                                            <th class="d-none d-lg-table-cell" style="width: 15%;">Registation Date</th>
-                                           
+                                            <th class="d-none d-lg-table-cell" style="width: 15%;">Access</th>
+                                            <th class="text-center" style="width: 80px;">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                       <?php
-                       include_once('../config/PDOClass.php');
-                       $get_id = $_GET['cell_id']; 
-                      $sql = "SELECT * from gbumember WHERE cell='$get_id'";
-                      $query = $db->prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=1;
-
-                      foreach ($results as $result) {
-                           // if ($results->rowCount()>0) {
-                                
-                          
-                    
-                                ?>
                                         <tr>
                                             <td class="d-none d-sm-table-cell text-center">
-                                                <span class="badge badge-pill badge-primary"><?=$cnt?></span>
+                                                <span class="badge badge-pill badge-primary">1</span>
                                             </td>
                                             <td class="text-center">
                                                 <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar13.jpg" alt="">
                                             </td>
                                             <td class="font-w600">
-                                                <a href="javascript:void(0)"><?=$result->firstname?>  <?=$result->lastname?></a>
+                                                <a href="javascript:void(0)">Jose Parker</a>
                                             </td>
                                             <td class="d-none d-sm-table-cell">
-                                                <?=$result->email?>
-                                            </td>
-                                            <td class="d-none d-sm-table-cell">
-                                                <?=$result->graduation?>
+                                                client1@example.com
                                             </td>
                                             <td class="d-none d-lg-table-cell">
-                                                <span class="badge badge-success"><?=$result->submitdate?></span>
+                                                <span class="badge badge-success">VIP</span>
                                             </td>
-                                            
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
                                         </tr>
-                              <?php $cnt++;  
-                          // }
-
-                          }?>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">2</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar9.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Scott Young</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client2@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-info">Business</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">3</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar10.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Jose Parker</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client3@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-danger">Disabled</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
                   
                                     </tbody>
                                 </table>

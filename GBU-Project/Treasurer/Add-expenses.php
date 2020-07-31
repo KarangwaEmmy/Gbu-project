@@ -9,13 +9,12 @@
         $expense = filter_var($_POST['expense'], FILTER_SANITIZE_STRING);
         $amount = filter_var($_POST['amount'], FILTER_SANITIZE_STRING);
         $comment = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
-        $academic = filter_var($_POST['academic'], FILTER_SANITIZE_STRING);
 
         // Query to insert into the database
 
         $submitter = "Treasure";
 
-        $sql = $db->prepare("INSERT INTO `expenses` (`academic`,`date`,`submitter`, `name`, `details`, `amount`) VALUES ('$academic','$date','$submitter', '$expense', '$amount', '$comment')");
+        $sql = $db->prepare("INSERT INTO `expenses` (`date`,`submitter`, `name`, `details`, `amount`) VALUES ('$date','$submitter', '$expense', '$amount', '$comment')");
 
         $sql->execute(array(':date'=>$date, ':expense'=>$expense,':comment'=>$comment, ':amount'=>$amount));
         if ($sql) {
@@ -165,26 +164,6 @@
                             <div class="row justify-content-center py-20">
                                 <div class="col-xl-6">
                                     <form  action="" method="post">
-                                    <?php
-                                    include_once('../config/PDOClass.php');
-                                    $sql = "SELECT * FROM `academic-year`";
-                                    $query = $db->prepare($sql);
-                                    $query->execute();
-                                    $results=$query->fetchAll(PDO::FETCH_OBJ);
-
-                                    if($query->rowCount() > 0)
-                                        {
-                                        foreach($results as $result)
-                                        {               
-                                                ?> 
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-username">Academic Year <span class="text-danger">*</span></label>
-                             
-                                            <div class="col-lg-8">
-                                                <input type="text" class="form-control" id="val-username" name="academic"  value="<?php echo htmlentities($result->year);?>" readonly>
-                                            </div>
-                                        </div>
-                                         <?php }}?>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="example-datepicker1"> Spend  Date</label>
                                             <div class="col-lg-8">

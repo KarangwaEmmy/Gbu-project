@@ -66,9 +66,9 @@ session_start();
 
                             <!-- Logo -->
                             <div class="content-header-item">
-                                <a class="link-effect font-w700" href=" ">
-                                    <i class="si si-users text-primary"></i>
-                                    <span class="font-size-xl text-dual-primary-dark">GBU</span><span class="font-size-xl text-primary">Nyarugenge Campus</span>
+                                <a class="link-effect font-w700" href="#">
+                                    <i class="si si-fire text-primary"></i>
+                                    <span class="font-size-xl text-dual-primary-dark">GBU</span><span class="font-size-xl text-primary"> Nyarugenge Campus</span>
                                 </a>
                             </div>
                             <!-- END Logo -->
@@ -88,8 +88,8 @@ session_start();
                     <div class="content-header-section">
                         <!-- Logo -->
                         <div class="content-header-item">
-                            <a class="link-effect font-w700 mr-5" href=" ">
-                                <i class="si si-users text-primary"></i>
+                            <a class="link-effect font-w700 mr-5" href="#">
+                                <i class="si si-fire text-primary"></i>
                                 <span class="font-size-xl text-dual-primary-dark">GBU</span><span class="font-size-xl text-primary">Nyarugenge Campus</span>
                             </a>
                         </div>
@@ -102,11 +102,11 @@ session_start();
                 
                         <ul class="nav-main-header">
                             <li>
-                                <a class="active" href=" "><i class="si"></i>Gbu Cells</a>
+                                <a class="active" href="#"><i class="si"></i>Gbu Membership Form</a>
                             </li>
                   
                             <li>
-                                <a href="dashboard.php"><i class="si si-home"></i>Back to dashboard</a>
+                                <a href="dashboard.php"><i class="si si-home"></i>Back to Dashboard</a>
                             </li>
                             
                         </ul>
@@ -163,40 +163,46 @@ session_start();
 
             <div class="content">
                     <div class="my-50 text-center">
-                       
-                        <h3 class="h5 text-muted mb-0">All Cells</h3>
+                        <h2 class="font-w700 text-black mb-10">All Cells</h2>
+                        <h3 class="h5 text-muted mb-0">All great, keep it up!</h3>
                     </div>
                     <div class="row">
-                        <?php 
-                      include_once('../config/PDO.php');
-                      $sql = "SELECT * from cell";
-                      $query = $db->prepare($sql);
-                      $query->execute();
-                      $results=$query->fetchAll(PDO::FETCH_OBJ);
-                      $cnt=1;
-
-                      foreach ($results as $result) {
-                    
-                                ?>
+                 
                         <div class="col-lg-6 col-xl-4">
                             <div class="block block-fx-shadow text-center">
-                                <a class="d-block bg-info font-w600 text-uppercase py-5" >
-                                    <span class="text-white"><?=$result->name?></span>
+                                <a class="d-block bg-info font-w600 text-uppercase py-5" href="javascript:void(0)" data-toggle="modal" data-target="#modal-crypto-wallet-eth">
+                                    <span class="text-white">Jehovah Shallon</span>
                                 </a>
                                 <div class="block-content block-content-full">
-                                    <div class="pt-15 pb-20">
-                                        <div class="font-size-h3 font-w400"><?=$result->cellleader?></div>
-                                        <br>
-                                        <div class="font-size-sm font-w600 text-uppercase text-muted"><?=$result->period?></div>
+                                    <div class="pt-20 pb-30">
+                                        <div class="font-size-h3 font-w700">8 Members</div>
+                                        <div class="font-size-sm font-w600 text-uppercase text-muted">Cell leader name</div>
                                     </div>
-                                    <a class="btn btn-secondary" href="Cell-members.php?cell_id=<?=$result->id?>">
+                                    <a class="btn btn-secondary" href="Cell-members.php">
                                         <i class="fa fa-send mr-5"></i> View More
                                     </a>
                                      
                                 </div>
                             </div>
                         </div>
-                     <?php $cnt++; }?>
+                      
+                        <div class="col-lg-6 col-xl-4">
+                            <div class="block block-fx-shadow text-center">
+                                <a class="d-block bg-elegance font-w600 text-uppercase py-5" href="javascript:void(0)" data-toggle="modal" data-target="#modal-crypto-wallet-gbp">
+                                    <span class="text-white">Domijion Cell</span>
+                                </a>
+                                <div class="block-content block-content-full">
+                                    <div class="pt-20 pb-30">
+                                        <div class="font-size-h3 font-w700">7 members</div>
+                                        <div class="font-size-sm font-w600 text-uppercase text-muted">Cell leader name</div>
+                                    </div>
+                                   <a class="btn btn-secondary" href="Cell-members.php">
+                                        <i class="fa fa-send mr-5"></i> View More
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                 </div>
@@ -205,7 +211,325 @@ session_start();
  
         </div>
         <!-- END Page Container -->
+
+        <!-- BTC Wallet -->
  
+        <!-- END BTC Wallet -->
+
+        <!-- ETH Wallet -->
+        <div class="modal fade" id="modal-crypto-wallet-eth" tabindex="-1" role="dialog" aria-labelledby="modal-crypto-wallet-eth" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="block block-themed block-transparent mb-0">
+                        <div class="block-header bg-primary-dark">
+                            <h3 class="block-title">
+                                <i class="si si-wallet text-info mr-5"></i> Dominion Cell
+                            </h3>
+                            <div class="block-options">
+                                <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                    <i class="si si-close"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <table class="table table-striped table-borderless table-hover table-vcenter">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="d-none d-sm-table-cell text-center" style="width: 40px;">#</th>
+                                            <th class="text-center" style="width: 70px;"><i class="si si-user"></i></th>
+                                            <th>Name</th>
+                                            <th class="d-none d-sm-table-cell">Email</th>
+                                            <th class="d-none d-lg-table-cell" style="width: 15%;">Access</th>
+                                            <th class="text-center" style="width: 80px;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">1</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar13.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Jose Parker</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client1@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-success">VIP</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">2</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar9.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Scott Young</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client2@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-info">Business</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">3</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar10.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Jose Parker</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client3@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-danger">Disabled</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">4</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar14.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Jack Estrada</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client4@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-info">Business</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">5</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar4.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Lori Grant</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client5@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-warning">Trial</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">6</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar12.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Ralph Murray</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client6@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-danger">Disabled</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">7</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar12.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Jesse Fisher</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client7@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-success">VIP</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">8</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar5.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Lisa Jenkins</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client8@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-success">VIP</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">9</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar6.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Danielle Jones</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client9@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-warning">Trial</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="d-none d-sm-table-cell text-center">
+                                                <span class="badge badge-pill badge-primary">10</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <img class="img-avatar img-avatar48" src="../assets/media/avatars/avatar13.jpg" alt="">
+                                            </td>
+                                            <td class="font-w600">
+                                                <a href="javascript:void(0)">Brian Stevens</a>
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                client10@example.com
+                                            </td>
+                                            <td class="d-none d-lg-table-cell">
+                                                <span class="badge badge-warning">Trial</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Edit">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-secondary" data-toggle="tooltip" title="Delete">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-alt-secondary" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-alt-primary" type="button" data-dismiss="modal">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END ETH Wallet -->
+
+       
+ 
+
  
         <script src="../assets/js/codebase.core.min.js"></script>
 
@@ -225,4 +549,4 @@ session_start();
         
     </body>
 </html>
-<?php } ?>
+<?php }?>
